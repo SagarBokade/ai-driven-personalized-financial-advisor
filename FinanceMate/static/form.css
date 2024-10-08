@@ -1,0 +1,131 @@
+body {
+    
+        font-family: Arial, sans-serif;
+        background: linear-gradient(190deg, rgba(26,20,138,1) 0%, rgba(16,16,56,1) 82%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Changed from center to flex-start */
+        height: 100vh;
+        margin: 0;
+        padding: 20px; /* Add padding around the container */
+    
+    
+   
+}
+
+.container {
+    background-color: #f2f2f2;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 80vh; /* Set a max height relative to the viewport */
+    margin-top: 50px; /* Add margin to avoid being at the top */
+}
+
+.questionnaire-header {
+    background-color: #ff7777;
+    box-shadow: 10px 10px 20px rgb(41, 12, 96);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.form-section {
+    padding: 20px;
+}
+
+.section-header {
+    background-color: #c8c8c8;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+
+.form-group input[type="number"], 
+.form-group input[type="text"],
+.form-group select {
+    width: 100%; /* Make all input fields occupy the full width of the form group */
+    padding: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    margin: 5px 0; /* Adds some margin between fields */
+}
+.button{
+    height: 40px;
+    width:100px;
+    background-color: #ff7777;
+    margin-left: 300px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+}
+/* Mobile Screen Styles */
+@media (max-width: 600px) {
+    .container {
+        width: 100%; /* Adjust container width to fit the mobile screen */
+        padding: 10px;
+        margin-top: 20px; /* Adjust top margin for better spacing */
+    }
+
+    .questionnaire-header {
+        font-size: 18px; /* Adjust font size for mobile screens */
+        padding: 10px 0;
+    }
+
+    .form-section {
+        padding: 15px; /* Reduce padding for mobile screens */
+    }
+
+    .section-header {
+        font-size: 14px; /* Adjust font size for section headers */
+        padding: 8px;
+    }
+
+    .form-group label {
+        font-size: 14px; /* Adjust label font size */
+    }
+
+    .form-group input[type="number"], 
+    .form-group input[type="text"],
+    .form-group select {
+        font-size: 12px; /* Adjust font size for inputs and selects */
+        padding: 8px; /* Reduce padding for input fields */
+    }
+
+    .button {
+        width: 80px; /* Adjust button size */
+        margin-left: 35%; /* Remove left margin to center the button */
+        margin-bottom: 20px;
+    }
+
+    .button a {
+        font-size: 12px; /* Adjust button text size */
+    }
+}
+
