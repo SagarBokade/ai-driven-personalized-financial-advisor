@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-FinanceMate</title>
+    <script src="https://kit.fontawesome.com/78fc119ecf.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/hs.css">
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+            letter-spacing: 0.07em;
+    
+        }
+        #top{
+            background-image: url(/images/about.jpg);
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    background-position: center;
+    background-size: cover;
+        }
+
+        #top #about-us{
+            
+            height: 70vh;
+            width: 100vw;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+          #top #about-us h1{
+            color: rgb(225, 244, 244);
+            font-size: 45px;
+            letter-spacing: 1px;
+        }
+        #contact{
+            padding: 8vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        #contact .getin{
+            width: 350px;
+        }
+        #contact .getin h2{
+            font-size: 30px;
+            font-weight: 800;
+            line-height: .8;
+            margin-bottom: 16px;
+        }
+        #contact .getin p{
+            color: #686875;
+            line-height: 24px;
+            margin-bottom: 33px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e5e4ed;
+        }
+        #contact .getin h3{
+            color: #2c234d;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: .20px;
+            margin-bottom: 1px;
+        }
+        #contact .getin .getin-details div{
+            display: flex;
+            
+        }
+        #contact .getin .getin-details div .l{
+            font-size: 16px;
+            line-height: 22px;
+            color: black;
+            margin-top: 25px;
+            margin-right: 20px;
+        }
+        #contact .getin .getin-details div p{
+            font-size: 14px;
+            border-bottom: none;
+            line-height: 22px;
+            margin-bottom: 15PX;
+            margin-top: 25px;
+        }
+        #contact .getin .getin-details .ll{
+            margin-right: 20px;
+            margin-top: 25px;
+            font-size: 30px;
+        }
+        #contact .form{
+            width: 60%;
+            background: #f7f6fa;
+            padding: 40px 40px 40px 40px;
+            border-radius: 10px;
+            margin-right: 30px;
+        }
+        #contact .form h4{
+            font-size: 24px;
+            color: #2c234d;
+            line-height: 30px;
+            margin-bottom: 8px;
+
+        }
+        #contact .form p{
+            color: #686875;
+            line-height: 24px;
+            padding-bottom: 25px;
+           
+        }
+        #contact .form .form-row{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        #contact .form .form-row input{
+            width: 40%;
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 3px;
+            border: none;
+            background: #fff;
+            color: #7e7c87;
+            outline: none;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+        }
+        #contact .form .form-col input,
+        #contact .form .form-col textarea{
+            width: 92%;
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 3px;
+            border: none;
+            background: #fff;
+            color: #7e7c87;
+            outline: none;
+            padding: 20px 30px;
+            margin-bottom: 20px;
+        }
+        #contact .form button{
+            height: 40px;
+            font-size: .9rem;
+            padding: 13px,25px;
+            border-radius:5px ;
+            background: rgb(21, 21, 100);
+            outline: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            color: #fff;
+        }
+        #map{
+            width: 100%;
+            height: 70vh;
+            margin-bottom: 40px;
+        }
+        #map iframe{
+            width: 100%;
+            height: 100%;
+        }
+
+        @media(max-width: 769px){
+            #contact {
+                 padding: 8vw 4vw;
+            }
+            #contact .getin {
+                  width: 250px;
+            }
+        }
+        @media(max-width: 475px){
+            #contact {
+                 padding: 8vw 4vw;
+                 flex-direction: column;
+                 align-items: flex-start;
+                 justify-content: flex-start;
+            }
+            #contact .getin {
+                 width: 100%;
+                 margin-bottom: 30px;
+            }
+            #contact .form {
+                width: 90%;
+                padding: 40px 30px ;
+                width: 83%;
+            }
+            #top #about-us {
+                background-image: url(bgg.jpg);
+                height: 70vh;
+                width: 100%;
+                padding: 0%;
+                margin: 0%;
+            }
+            #contact .form .form-row input {
+                width: 30%;
+                font-size: 14px;
+                padding: 20px 30px;
+                margin-bottom: 20px;
+            }
+            #contact .form .form-col input, #contact .form .form-col textarea {
+                width: 80%;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+        <nav class="navbar">
+            <div class="logo">
+            <img src="/images/bg1.png" alt="Logo" />
+            </div>
+            <div class="links">
+                <ul id="list">
+                    <li><a href="index.html" target="">Home</a></li>
+                    <li><a href="about.html" target="">About Us</a></li>
+                    <li><a href="Contact.html" target="">Contact Us</a></li>
+
+                    <li>
+                        <a href="form.html" 
+                           style="font-weight: bold; 
+                                  color: white; 
+                                  background-color: #2c3e50; /* Navy Blue */
+                                  padding: 10px 20px; 
+                                  text-decoration: none; 
+                                  border-radius: 8px; 
+                                  border: 2px solid #1a252f; /* Darker Navy */
+                                  display: inline-block;
+                                  transition: background-color 0.3s ease;"
+                           onmouseover="this.style.backgroundColor='#f295c5'"
+                           onmouseout="this.style.backgroundColor='#2c3e50'">
+                            Get Advice
+                        </a>
+                    </li>
+                    
+                  </ul>
+            </div>
+            <div class="menu">
+            <img src="/images/menu.png" onclick="toggle()" alt="">
+            </div>
+        </nav>
+        <section id="top">
+            <div id="about-us">
+                <h1>Contact FinanceMate </h1>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="getin ">
+              <h2 >Get In Touch</h2>
+              <p>Looking for help? Fill the form and start a new advanture</p>  
+              <div class="getin-details">
+                <!-- <h3>Headquaters</h3>
+                <div>
+                    <i class="fa-sharp fa-solid fa-house l"></i>
+                    <P>14-1, Takli Seem-Hingna rd,<br>Rajendra Nagar ,Yashodha Nagar ,Nagpur <br>Maharastra 440036</P>
+                </div> -->
+                <h3>Phone</h3>
+                <div>
+                    <i class="fa-solid fa-phone l "></i>
+                    <P>+91-8623068575 <br>+91-999999999</P>
+                </div>
+                <h3>Support</h3>
+                <div>
+                    <i class="fa-solid fa-envelope l"></i>
+                    <P>contact@FinanceMate.co.in</P>
+                </div>
+                <h3>Follow us</h3>
+                <div class="pro-link">
+                    <i class="fa-brands fa-square-facebook fa-fade ll"></i>
+                    <i class="fa-brands fa-square-instagram fa-fade ll"></i>
+                    <i class="fa fa-linkedin-square fa-fade ll" aria-hidden="true"></i>
+                    <i class="fa fa-envelope fa-fade ll" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="form">
+                <h4>
+                    Let's Connect
+                </h4>
+                <p>Feel Free To Contact Us!</p>
+                <div class="form-row">
+                    <input type="text" placeholder="Your name">
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class="form-col">
+                    <input type="text" placeholder="Subject">        
+                </div>
+                <div class="form-col">
+                    <textarea name="" id="" cols="30" rows="8" placeholder="How can We Help"></textarea>
+                </div>
+                <div class="form-col">
+                    <button> Send Message</button>        
+                </div>
+        </section>
+        <!-- <section id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.7994287348433!2d79.0253311!3d21.1205611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1be2c29f593%3A0x3aaaa70ce55a17ef!2sCodemate%20IT%20Services!5e0!3m2!1sen!2sin!4v1690115819081!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section> -->
+        <footer>
+            <div class="f-container">
+              <div class="company">
+                <div class="logo">
+                  <!-- <img src="/images/" alt="Logo" /> -->
+                  <h3>FinanceMate</h3>
+                </div>
+                <div class="para">
+                  <p>
+                    Harness the power of AI, guiding your way.
+      Invest, save, and grow, with every insight we display.
+      Empowering your choices, one step at a time,
+      Join us on this journey to financial heights you’ll climb.
+                  </p>
+                </div>
+              </div>
+              <div class="link">
+                <h3>Links</h3>
+                <ul>
+                  <li><a href="index.html" target="">Home</a></li>
+                  <li><a href="about.html" target="">About</a></li>
+                  <li><a href="register.html" target="">Get Advice</a></li>
+                </ul>
+              </div>
+              <div class="contact-info">
+                <h3>Office</h3>
+                <div class="location">
+                  <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Hingna Rd, Rajendra Nagar, Yahodha Nagar, Nagpur(MH) 440036</p>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>FinanceMate@gmail.com</p>
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+91-7894564136</p>
+                  </div>
+                </div>
+              </div>
+              <div class="connect">
+                <h3>Connect</h3>
+                <div class="mail">
+                  <i class="fa-solid fa-envelope"></i>
+      
+                  <input type="email" placeholder="Enter your email id" />
+                  <a href=""><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="media">
+                  <a href=""> <i class="fa-brands fa-facebook-f"></i> </a>
+                  <a href=""> <i class="fa-brands fa-instagram"></i> </a>
+                  <a href=""> <i class="fa-brands fa-linkedin-in"></i></a>
+                  <a href=""> <i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="copyright">
+              <p>FinanceMate Fianacial Advice service:@2023-All Rights Reserved</p>
+            </div>
+          </footer>
+        <script src="main.js"></script>
+</body>
+</html>
