@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questionnaire</title>
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
 </head>
 
 <body>
-    
-    <div class="container">
+    <div id="form-container" class="container">
         <div class="questionnaire-header">Questionnaire</div>
-        <div class="form-section">
-            <div class="section-header">Personal Details</div>
-            <form>
+        <form id="finance-form">
+            <!-- Personal Details -->
+            <div class="form-section">
+                <div class="section-header">Personal Details</div>
                 <div class="form-group">
                     <label for="age">What is your age? *</label>
-                    <input type="number" id="age" name="age" placeholder="Enter Age">
+                    <input type="number" id="age" name="age" placeholder="Enter Age" required>
                 </div>
                 <div class="form-group">
                     <label for="income">What is your annual income? *</label>
-                    <input type="number" id="income" name="income" placeholder="Enter Income">
+                    <input type="number" id="income" name="income" placeholder="Enter Income" required>
                 </div>
                 <div class="form-group">
                     <label for="employment-status">What is your current employment status? *</label>
-                    <select id="employment-status" name="employment-status">
+                    <select id="employment-status" name="employment-status" required>
                         <option>Select Status</option>
                         <option>Employed</option>
                         <option>Self-Employed</option>
@@ -45,14 +45,14 @@
                         <option>4+</option>
                     </select>
                 </div>
-            </form>
-        </div>
-        <div class="form-section">
-            <div class="section-header">Fianancial Goals</div>
-            <form>
+            </div>
+
+            <!-- Financial Goals -->
+            <div class="form-section">
+                <div class="section-header">Financial Goals</div>
                 <div class="form-group">
                     <label for="financial-goals">What are your primary financial goals? *</label>
-                    <select id="financial-goals" name="financial-goals">
+                    <select id="financial-goals" name="financial-goals" required>
                         <option>Select Goal</option>
                         <option>Retirement</option>
                         <option>Buying a Home</option>
@@ -62,162 +62,175 @@
                 </div>
                 <div class="form-group">
                     <label for="investment-value">How much do you want to save or invest toward these goals? *</label>
-                    <input type="number" id="investment-value" name="investment-value" placeholder="Enter Value">
+                    <input type="number" id="investment-value" name="investment-value" placeholder="Enter Value" required>
                 </div>
-            </form>
-        </div>
-        <div class="form-section">
-            <div class="section-header">Risk Tolerance</div>
-            <form>
+            </div>
+
+            <!-- Risk Tolerance -->
+            <div class="form-section">
+                <div class="section-header">Risk Tolerance</div>
                 <div class="form-group">
                     <label for="risk-tolerance">What is your risk tolerance level? *</label>
-                    <select id="risk-tolerance" name="risk-tolerance">
+                    <select id="risk-tolerance" name="risk-tolerance" required>
                         <option>Low</option>
                         <option>Medium</option>
                         <option>High</option>
-
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="financial-risks">Have you ever experienced a significant financial loss? If so, how did
-                        you handle it?
-                        *</label>
-                    <input type="text" id="financial-risks" name="financial-risks" placeholder="Enter Value">
+                    <label for="financial-risks">Have you ever experienced a significant financial loss? If so, how did you handle it? *</label>
+                    <input type="text" id="financial-risks" name="financial-risks" placeholder="Enter Value" required>
                 </div>
-            </form>
-        </div>
+            </div>
 
-
-        <div class="form-section">
-            <div class="section-header">Investment Preferences</div>
-            <form>
+            <!-- Investment Preferences -->
+            <div class="form-section">
+                <div class="section-header">Investment Preferences</div>
                 <div class="form-group">
                     <label for="Existing-investments">Do you have any existing investments? *</label>
-                    <select id="Existing-investments" name="Existing-investments">
+                    <select id="Existing-investments" name="Existing-investments" required>
                         <option>Stocks</option>
                         <option>Bonds</option>
-                        <option>Mutual-Fuunds</option>
-                        <option>Real-estate</option>
-
+                        <option>Mutual Funds</option>
+                        <option>Real Estate</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="investment-style">What is your preferred investment style? *</label>
-                    <select id="investment-style" name="investment-style">
+                    <select id="investment-style" name="investment-style" required>
                         <option>Conservative</option>
                         <option>Balanced</option>
                         <option>Aggressive</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="invest-preference">Are there any sectors or industries you prefer to invest in or avoid?
-                        *</label>
-                    <input type="text" id="invest-preference" name="invest-preference" placeholder="Enter Value">
+                    <label for="invest-preference">Are there any sectors or industries you prefer to invest in or avoid? *</label>
+                    <input type="text" id="invest-preference" name="invest-preference" placeholder="Enter Value" required>
                 </div>
-            </form>
-        </div>
-        
-        <div class="form-section">
-            <div class="section-header">Current Fianancial Status</div>
-            <form>
+            </div>
+
+            <!-- Current Financial Status -->
+            <div class="form-section">
+                <div class="section-header">Current Financial Status</div>
                 <div class="form-group">
                     <label for="existing-debts">Do you have any existing debts? *</label>
-                    <select id="existing-debts" name="existing-debts">
+                    <select id="existing-debts" name="existing-debts" required>
                         <option>Select Status</option>
                         <option>Credit-card</option>
                         <option>Student-loan</option>
                         <option>Mortgage</option>
-                        
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="savings-rate">What is your current monthly savings rate?*</label>
-                    <input type="number" id="savings-rate" name="savings-rate" placeholder="Enter Savings Rate">
+                    <input type="number" id="savings-rate" name="savings-rate" placeholder="Enter Savings Rate" required>
                 </div>
                 <div class="form-group">
-                    <label for="emergency-funds">Do you have an emergency fund? If yes, how many months’ expenses does it cover?
-
-                        *</label>
-                    <input type="text" id="emergency-funds" name="emergency-funds" placeholder="Enter Value">
+                    <label for="emergency-funds">Do you have an emergency fund? If yes, how many months’ expenses does it cover? *</label>
+                    <input type="text" id="emergency-funds" name="emergency-funds" placeholder="Enter Value" required>
                 </div>
-                
-            </form>
-        </div>
-        <div class="form-section">
-            <div class="section-header">Tax and Legal Considerations</div>
-            <form>
-                <div class="form-group">
-                    <label for="tax-bracket">Are you aware of your current tax bracket?
-                    *</label>
-                    <input type="text" id="tax-bracket" name="tax-bracket" placeholder="Enter Value">
-                </div>
-                <div class="form-group">
-                    <label for="tax-related concerns">Do you have any specific tax-related concerns or strategies?
-
-                    *</label>
-                    <input type="text" id="tax-related concerns" name="tax-related concerns" placeholder="Enter Value">
-                </div>
-                
-                <div class="form-group">
-                    <label for="estate planning">Do you have any estate planning or insurance needs?
-
-                    *</label>
-                    <input type="text" id="estate planning" name="estate planning" placeholder="Enter Value">
-                </div>
-                
-            </form>
-        </div>
-        <div class="form-section">
-            <div class="section-header">Fianancial Habits </div>
-            <form>
-                <div class="form-group">
-                    <label for="financial plan ">How often do you review your financial plan or investments?
-
-                    *</label>
-                    <input type="text" id="financial plan " name="financial plan " placeholder="Enter Value">
-                </div>
-                <div class="form-group">
-                    <label for="managing-finances">Do you prefer managing your finances independently or seeking professional advice?
-
-                    *</label>
-                    <input type="text" id="managing-finances" name="managing-finances" placeholder="Enter Value">
-                </div>
-                
-                <div class="form-group">
-                    <label for="estate planning">Do you have any estate planning or insurance needs?
-
-                    *</label>
-                    <input type="text" id="estate planning" name="estate planning" placeholder="Enter Value">
-                </div>
-                
-            </form>
-        </div>
-        <div class="form-section">
-            <div class="section-header">Technological Comfort:
             </div>
-            <form>
+
+            <!-- Tax and Legal Considerations -->
+            <div class="form-section">
+                <div class="section-header">Tax and Legal Considerations</div>
                 <div class="form-group">
-                    <label for="AI-driven ">How comfortable are you with using AI-driven tools for financial advice?
-
-
-                    *</label>
-                    <input type="text" id="AI-driven " name="AI-driven " placeholder="Enter Value">
+                    <label for="tax-bracket">Are you aware of your current tax bracket? *</label>
+                    <input type="text" id="tax-bracket" name="tax-bracket" placeholder="Enter Value" required>
                 </div>
                 <div class="form-group">
-                    <label for="personalization">What level of personalization do you expect from an AI financial advisor?
-
-                    *</label>
-                    <input type="text" id="personalization" name="personalization" placeholder="Enter Value">
+                    <label for="tax-related-concerns">Do you have any specific tax-related concerns or strategies? *</label>
+                    <input type="text" id="tax-related-concerns" name="tax-related-concerns" placeholder="Enter Value" required>
                 </div>
-                
-                
-                
-            </form>
-        </div>
-        <div class="button"><a href="#">Submit</a></div>
+                <div class="form-group">
+                    <label for="estate-planning">Do you have any estate planning or insurance needs? *</label>
+                    <input type="text" id="estate-planning" name="estate-planning" placeholder="Enter Value" required>
+                </div>
+            </div>
+
+            <!-- Financial Habits -->
+            <div class="form-section">
+                <div class="section-header">Financial Habits</div>
+                <div class="form-group">
+                    <label for="financial-plan">How often do you review your financial plan or investments? *</label>
+                    <input type="text" id="financial-plan" name="financial-plan" placeholder="Enter Value" required>
+                </div>
+                <div class="form-group">
+                    <label for="managing-finances">Do you prefer managing your finances independently or seeking professional advice? *</label>
+                    <input type="text" id="managing-finances" name="managing-finances" placeholder="Enter Value" required>
+                </div>
+            </div>
+
+            <!-- Technological Comfort -->
+            <div class="form-section">
+                <div class="section-header">Technological Comfort</div>
+                <div class="form-group">
+                    <label for="AI-driven">How comfortable are you with using AI-driven tools for financial advice? *</label>
+                    <input type="text" id="AI-driven" name="AI-driven" placeholder="Enter Value" required>
+                </div>
+                <div class="form-group">
+                    <label for="personalization">What level of personalization do you expect from an AI financial advisor? *</label>
+                    <input type="text" id="personalization" name="personalization" placeholder="Enter Value" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 
-
+    <script>
+        document.getElementById('finance-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            // Gather form data
+            const formData = {
+                age: document.getElementById('age').value,
+                income: document.getElementById('income').value,
+                employmentStatus: document.getElementById('employment-status').value,
+                dependencies: document.getElementById('dependencies').value,
+                financialGoals: document.getElementById('financial-goals').value,
+                investmentValue: document.getElementById('investment-value').value,
+                riskTolerance: document.getElementById('risk-tolerance').value,
+                financialRisks: document.getElementById('financial-risks').value,
+                existingInvestments: document.getElementById('Existing-investments').value,
+                investmentStyle: document.getElementById('investment-style').value,
+                investPreference: document.getElementById('invest-preference').value,
+                existingDebts: document.getElementById('existing-debts').value,
+                savingsRate: document.getElementById('savings-rate').value,
+                emergencyFunds: document.getElementById('emergency-funds').value,
+                taxBracket: document.getElementById('tax-bracket').value,
+                taxConcerns: document.getElementById('tax-related-concerns').value,
+                estatePlanning: document.getElementById('estate-planning').value,
+                financialPlanReview: document.getElementById('financial-plan').value,
+                managingFinances: document.getElementById('managing-finances').value,
+                comfortWithAI: document.getElementById('AI-driven').value,
+                personalizationExpectations: document.getElementById('personalization').value,
+            };
+        
+            // Send form data to backend
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Redirect to the advice page with the generated advice
+                window.location.href = `/advice?advice=${encodeURIComponent(data.advice)}`;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+        </script>
+        
+        
 </body>
 
 </html>
