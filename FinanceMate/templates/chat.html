@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Advisor Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #chat-container {
+            width: 400px;
+            max-height: 600px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #chat-header {
+            background-color: #00796b;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #chat-window {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            margin: 10px 0;
+            display: flex;
+        }
+
+        .user-message {
+            justify-content: flex-end;
+        }
+
+        .bot-message {
+            justify-content: flex-start;
+        }
+
+        .message-box {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+
+        .user-message .message-box {
+            background-color: #e0f7fa;
+            color: #00796b;
+            border-radius: 10px 0 10px 10px;
+        }
+
+        .bot-message .message-box {
+            background-color: #f1f1f1;
+            color: #333;
+            border-radius: 0 10px 10px 10px;
+        }
+
+        #chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: #fafafa;
+            border-top: 1px solid #ddd;
+            border-radius: 0 0 10px 10px;
+        }
+
+        #user-input {
+            flex-grow: 1;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #send-btn {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #send-btn:hover {
+            background-color: #005b4f;
+        }
+
+        #greeting {
+            text-align: center;
+            margin-top: 10px;
+            color: #00796b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<>
+
+    <div id="chat-container">
+        <div id="chat-header">
+            Financial Advisor Bot
+        </div>
+
+        <div id="chat-window">
+            <!-- Initial greeting will be shown here -->
+            <div id="greeting"></div>
+        </div>
+
+        <div id="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Predefined questions and answers
+        const predefinedQA = {
+            "What is an emergency fund?": "An emergency fund is a financial safety net for unexpected expenses or financial emergencies.",
+            "How do I invest in mutual funds?": "To invest in mutual funds, you can either consult a financial advisor or invest through online platforms like mutual fund websites or apps.",
+            "What is a diversified portfolio?": "A diversified portfolio consists of a variety of investments such as stocks, bonds, and other assets to reduce risk.",
+            "How do I create a budget?": "You can create a budget by listing your income, fixed expenses, and variable expenses. Allocate a portion of your income for savings and stick to the plan.",
+            "Why should i give you my data?":"Sharing some of your  information helps the advice be more personalized and relevant to your situation. The better the chatbot knows your financial situation, the more useful and accurate the recommendations will be and it's completely safe and secured for your data.",
+            "Mai apna data Q du?":"Well, by giving some basic info, the advice can be compiled  to your specific situation. It’s like going to a doctor—if they don’t know anything about your health, they can’t give you the best treatment. Same with financial advice—the more it knows, the more useful it’ll be for you."
+        };
+    
+        // Function to send user input and receive a response from the bot
+        function sendMessage() {
+            var userInput = $('#user-input').val().trim();
+            if (userInput === "") return;  // Don't send empty messages
+    
+            // Add user message to chat window
+            $('#chat-window').append(
+                '<div class="message user-message"><div class="message-box">' + userInput + '</div></div>'
+            );
+    
+            // Check if the user's input matches any predefined question
+            if (predefinedQA.hasOwnProperty(userInput)) {
+                let botReply = predefinedQA[userInput];  // Get predefined answer
+    
+                // Add bot reply to chat window
+                $('#chat-window').append(
+                    '<div class="message bot-message"><div class="message-box">' + botReply + '</div></div>'
+                );
+    
+            } else {
+                // If no match, send input to server for processing
+                $.ajax({
+                    url: '/chat',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ input: userInput }),
+                    success: function (data) {
+                        // Process the bot response
+                        let botReply = data.response;
+    
+                        // Format reply (apply your existing formatting here)
+                        let formattedReply = botReply.replace(/\. (\d+)/g, '.<br>$1.');
+                        formattedReply = formattedReply.replace(/:\s/g, ':<br>');
+    
+                        // Add formatted bot reply to chat window
+                        $('#chat-window').append(
+                            '<div class="message bot-message"><div class="message-box">' + formattedReply + '</div></div>'
+                        );
+                    }
+                });
+            }
+    
+            $('#user-input').val('');  // Clear input field
+            $('#chat-window').scrollTop($('#chat-window')[0].scrollHeight);  // Scroll to bottom
+        }
+    
+        // Trigger sendMessage function when send button is clicked
+        $('#send-btn').on('click', sendMessage);
+    
+        // Trigger sendMessage function when Enter key is pressed
+        $('#user-input').on('keypress', function (e) {
+            if (e.which === 13) {
+                sendMessage();
+            }
+        });
+    
+        // Auto-greet the user when the page loads based on the current time
+        $(document).ready(function () {
+            $.ajax({
+                url: '/chat',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ input: "hello" }),  // Simulate greeting input
+                success: function (data) {
+                    let greeting = '<strong style="font-size: 1.5em;">' + data.response + '</strong>';  // Make greeting bold and larger
+                    $('#chat-window').append(
+                        '<div class="message bot-message" style="text-align: center;"><div class="message-box">' + greeting + '</div></div>' // Center the greeting
+                    );
+                }
+            });
+        });
+    </script>
+    
+    
+    
+
+    
+    
+
+    
+
+</body>
+</html>
 
