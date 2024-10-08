@@ -1,0 +1,867 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0.07em;
+    /* overflow: hidden; */
+    width: 100%;
+    
+}
+
+/* navbar css start */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    overflow: hidden;
+    padding: 5px 80px;
+}
+.logo img{
+    mix-blend-mode: color-burn;
+    filter: hue-rotate(45deg);
+}
+.navbar .links{
+    /* background-color: aquamarine; */
+    width: 700px;
+    font-size: 18px;
+}
+.navbar .links ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+
+}
+.navbar .links a{
+    text-decoration: none;
+    color:  rgb(29 38 82);
+}
+.navbar .links a:hover {
+    color: #fc540f;
+    transition: color 0.2s;
+ 
+   }
+
+.navbar li:nth-child(6){
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.2s;
+
+}
+
+.navbar li:nth-child(6):hover{
+    background-color: #111241;
+    cursor: pointer;
+}
+.logo img{
+    height: 50px;
+    
+    border-radius: 5px;
+}
+#close{
+    font-size: 45px;
+    color: aliceblue;
+    cursor: pointer;
+    display: none;
+
+}
+#close:hover{
+    color:  #fc540f;
+    transition: color 0.2s;
+}
+.menu{
+    display: none;
+}
+.menu img{
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+}
+.menu img:hover{
+    background-color: #e2e3e6;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+/* navbar css end */
+
+/* main css start */
+/* page1 css start */
+.page1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  black url(/images/man\ \(2\).jpg) no-repeat ;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 50PX;
+}
+.page1::before {
+    content: "";
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0 0 0 / 71%);
+    z-index: 1; 
+  }
+  
+.inside{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    z-index: 2; 
+}
+.inside-image {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+.inside-image img{
+    z-index: 2;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: scale 2s linear infinite;
+    animation-direction: alternate;
+    border-radius: 40px;
+}
+@keyframes scale{
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.inside p{
+    line-height: 1.7;
+    color: #f9fafbd8;
+}
+.inside h1{
+    margin: 0px ;
+    font-family: math;
+}
+
+span{
+    color: #fc540f;
+    border-bottom: 2px solid white;
+}
+
+.inside a{
+    text-decoration: none;
+    color: white;
+    background-color:#fc540f;
+    padding: 10px;
+    border-radius: 15px 0px;
+}
+
+.inside a:hover{
+    background-color: #ff965d;
+    transition: 0.5s;
+}
+
+.inside a:nth-child(2){
+    background-color: rgb(253 122 122);
+}
+
+.inside a:nth-child(2):hover{
+    background-color: rgb(244, 89, 89);
+    transition: 0.5s;
+}
+/* page1 css end */
+
+/* page2 css start */
+.page2{
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    color: rgb(17, 25, 97);
+}
+.cards{
+    display: flex;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+.cards .card{
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+    border-radius: 5px;
+   background: #00259114;
+}
+
+.page2 i{
+    
+    font-size: xx-large;
+    line-height: 30px;
+}
+.page2 .cards p{
+    margin: 0px;
+    font-size: 15px;
+    color: #09163ca8;
+}
+/* page2 css end */
+/* page 3 css start */
+.page3{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: #001552;
+}
+.courses .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.courses .img {
+    height: 55%;
+}
+.courses .content {
+    height: 45%;
+}
+
+.page3 .courese-cards{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.courses{
+    background:  #00259114;
+    border-radius:5px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    position: relative;
+}
+.c-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.left ,.right {
+    font-size: 23px;
+    border-radius: 4px;
+  }
+
+.courses::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+.page3 .courese-cards .courses .content{
+    padding: 15px;
+}
+
+.page3 .courese-cards .courses .content .rp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page3 .courese-cards .courses .content p{
+    margin: 0px;
+    color: #4d5a819c;
+}
+.page3 .courese-cards .courses .content h3{
+    margin: 6px 0px;
+}
+.page3 .courese-cards .courses .content .price p{
+    width: 70px;
+    background-color: #131358;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+}
+.page3 .courese-cards .courses:hover{
+    transform: scale(1.02);
+    transition: 0.7s;
+}
+
+.wyjoinus{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background: linear-gradient(190deg, rgba(26,20,138,1) 0%, rgba(16,16,56,1) 82%);
+    color: aliceblue;
+    padding: 20px 0px;
+    border-radius: 4px;
+}
+
+.wyjoinus .part-1 h3{
+    background: #8183b769;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 25px 2px;
+}
+
+.wyjoinus .part-1 p {
+   color: #dadde3eb;
+}
+.wyjoinus .part-2 {
+    display: flex;
+    align-items: center;
+    text-align: center; 
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.wyjoinus .part-2 h2{
+    font-size: 30px;
+    margin: 5px 0px;
+    
+}
+.wyjoinus .part-2 p {
+    color: #dadde3eb;
+    margin: 0px;
+    font-size: 11px;
+ }
+
+ .part-2 .reson{
+    width: 100px;
+    background: #fbfcff21;
+	clip-path: polygon( 50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+    padding: 20px;
+    margin: 13px 15px;
+ }
+
+/* page 3 css end */
+/* page4 css start */
+.page4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #001552;
+}
+
+.page4 .comunity{
+    display: flex;
+    /* width: 70vw; */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+.page4 .comunity .expert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 8px;
+    height: 350px;
+    background-color: #00259114;
+    border-radius: 5px;
+}
+.page4 .comunity .expert p{
+    color: #09163ca8;
+    margin: 3px  0px 15px;
+}
+.page4 .comunity .expert h3{
+    margin: 10px 0px;
+}
+.page4  h1{
+    margin: 70px 0px 50px;
+}
+.page4 .comunity .expert a{
+    text-decoration: none;
+    color: #001552;
+    padding: 5px;
+    font-size: 18px;
+    display: inline-grid;
+    width: 18px;
+    justify-content: center;
+    background: #9aaabb36;
+    border-radius: 4px;
+
+}
+/* page4 css ends */
+/* page5 css start */
+.page5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #001552;
+}
+
+.page5 .testimonial{
+    display: flex;
+    align-items: center;
+    margin-bottom:50px;
+}
+.page5 .student-container{
+    display: flex;
+    flex-wrap: no-wrap;
+    overflow: hidden;
+    scroll-behavior: smooth;
+
+}
+
+.page5 .student-container .student img{
+    width: 140px;
+}
+
+
+.page5 .student-container .student p{
+    font-size: 15px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px 20px;
+    color: #10295485;
+}
+
+.student{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 8px;
+    height: 350px;
+    background-color: #00259114;
+    border-radius: 5px;
+    flex: 0 0 auto;
+}
+
+/* page5 css end */
+
+/* page6 css start */
+.page6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 40px auto 100px;
+    padding-bottom: 50px;
+    background: linear-gradient(190deg, rgba(26,20,138,1) 0%, rgba(16,16,56,1) 82%);
+    color: aliceblue;
+    border-radius: 5px;
+
+}
+.page6 .trust{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap ;
+}
+.page6 .trust img{
+    width: 100px;
+    margin: 20px 30px;
+}
+.page6 h1{
+    color:aliceblue;
+
+}
+/* page6 css end */
+
+/* footer css start */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0f1a38
+}
+
+footer .link a{
+    text-decoration: none;
+    color:rgb(189 199 217 / 97%);
+    font-family: system-ui;
+}
+
+footer .f-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer .f-container .company{
+    width: 250px;
+    padding: 15px 25px;
+    color: rgb(189 199 217 / 97%) ;
+}
+footer .f-container  h3{
+    color: rgba(239, 244, 255, 0.97) ;
+    border-bottom: 2px solid #fb6b6b;
+    display: table;
+}
+footer .f-container .company .para{
+   font-family: system-ui;
+}
+footer .f-container .link{
+    width: 200px;
+    color:white ;
+
+}
+footer .f-container .link  ul{
+    list-style: none;
+    font-size: 15px;
+    /* font-family: monospace; */
+    padding: 0;
+
+}
+footer .f-container .link ul li{
+    margin: 10px 0px;
+}
+
+footer .f-container .contact-info{
+    width: 250px;
+    padding: 15px 25px;
+    color:white ;
+}
+footer .f-container .connect{
+    width: 250px;
+    padding: 15px 25px;   
+    color:white;
+}
+footer .link a:hover{
+    color:rgba(255, 240, 180, 0.97);
+}
+
+footer .location{
+    font-size: 15px;
+    color: rgb(189 199 217 / 97%);
+}
+footer .location div i{
+    FONT-SIZE: 16PX;
+    padding-right: 10px;
+}
+footer .location div p{
+    margin:8px 0px;
+}
+footer .contact-info .location  div{
+    display: flex;
+    align-items: center;
+    font-family: system-ui;
+}
+
+footer .f-container .connect input{
+    padding: 10px;
+    /* background: #6c6c6c1a; */
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    color: #cbc6c6;
+}
+input:focus {
+    outline: none;
+  }
+
+footer .f-container .connect .media a{
+    text-decoration: none;
+    color: rgb(122 253 138 / 78%);
+    padding: 8px;
+    font-size: 18px;
+    display: inline-grid;
+    width: 18px;
+    justify-content: center;
+    background: #9aaabb36;
+    border-radius: 4px;
+    margin:20px 10px;
+}
+footer .f-container .connect .media a:hover{
+    color: rgb(241 123 123 / 95%);
+    transition: 0.5s;
+
+}
+footer .f-container .connect .mail{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0px 10px;
+    background: #9aaabb36;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+footer .f-container .connect .mail a i{
+    font-size: 20px;
+    color: #f77979;
+
+}
+
+footer .copyright{
+    color: #f0f8ffba;
+    font-size: 13px;
+    text-align: center;
+    font-family: system-ui;
+}
+
+/* responsive css */
+
+@media  (min-width: 1301px) { 
+    .page3.courese-cards{
+        width: 1119px;
+    }
+    .c-card{
+        width: 1140px;
+    }
+    }
+    
+    @media  (min-width: 1024px) {
+        .navbar{
+            padding: 5px 40px;
+        }
+    .inside h1 {
+        font-size: 47px;
+    }
+    .inside p {
+       width: 560px;
+       font-size: 18px;
+    }
+    .page1{
+        height: 80vh;
+    }
+    .inside a{
+        margin-top: 20px;
+        width: 180px;
+    }
+    .wyjoinus .part-1 h2 {
+        font-size: 30px;
+        width: 350px;
+    }
+    .page2 h1,.page3 h1, .page4 h1,.page5 h1{
+        margin: 50px 0px 50px;
+        font-size: 45px;
+        color: #00207c;}
+    .page6 h1{
+        margin: 50px 0px 50px;
+        font-size: 45px;
+    }
+    
+    .wyjoinus{
+        margin: 61px 150px 20px
+    }
+    .page5 .student-container{
+        width: 800px;
+    }
+    .inside{
+        width: 650px;
+    }
+    }
+    
+    @media screen and (min-width: 1024px) and (max-width: 1300px){
+        
+    .page1{
+        padding: 0px 80px;
+    }
+        
+        .inside-image img {  
+            width: 350px;     
+        }
+        .inside a{
+        margin-top: 20px;
+    
+        }
+        .page3 .courese-cards{
+            width: 740px;
+        }
+    }
+    @media screen and  (max-width: 1024px){
+        .navbar .links ul{
+            top: 0px;
+            right: -110%;
+            position: absolute;
+            height: 100%;
+            display: none;
+            width:100% ;
+            flex-direction: column;
+            background-color: #0a1c54;
+            z-index: 3;
+            margin: 0%;
+            border-radius: 55px 5px;
+            justify-content: center;
+            transition: all 1s;
+        }
+        .menu{
+            display: inline-block;
+        }
+        .navbar .links a{
+            color: aliceblue;
+            font-size: 23px;
+            transition: all 0.5s;     
+        }
+        .navbar .links a:hover{
+            color: #fc540f;
+            transform: scale(1.1);
+        }
+        .navbar .links ul li{
+            margin: 15px 0px;
+        }
+        .inside-image img {  
+            width: 300px;     
+        }
+        .inside a{
+        width: 160px;
+       }
+       .page3 .courese-cards{
+           width: 740px;
+       }
+    }
+    
+    
+    @media (min-width:767px)  and  (max-width: 1023px){
+        .page1{
+            padding: 0px 50px ;
+            height: 50vh;
+        }
+        .inside{
+            width: 400px;
+        }
+        .inside p {
+            font-size: 14px;
+            width: 393px;
+        }
+        .inside a{
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .wyjoinus{
+            margin: 15px 70px 20px;
+        }
+    
+        .page5 .student-container{
+            width: 533px;
+        }
+        .wyjoinus .part-1 h2 {
+            font-size: 30px;
+            width: 350px;
+        }
+        .navbar {
+            height: 60px;
+        }
+        }
+    
+    @media (max-width:767px) 
+    {
+        .navbar{
+    
+            padding: 5px 20px;
+        }
+    
+        .page1{
+            flex-direction: column-reverse;
+            height: 90vh;
+        }
+        .inside{
+            margin-top: 10%;
+            align-items: center;
+        }
+        .inside h1 {
+            font-size: 35px;
+            width: 450px;
+            text-align: center;
+           line-height: 50px;
+        } 
+        .inside p {
+            font-size: 17px;
+            width: 483px;
+            text-align: center;
+        }
+        .inside a{
+            margin-top: 10px;
+            font-size: 14px;
+        }   
+        .page2 h1, .page3 h1, .page4 h1, .page5 h1, .page6 h1 {
+            margin: 30px 0px 40px;
+            font-size: 35px;
+            text-align: center;
+        }
+        .page3 .courese-cards{
+            width: 370px;
+        }
+        .wyjoinus{
+            margin: 0px 40px;
+        }
+        .wyjoinus .part-1 h2 {
+            font-size: 25px;
+            width: 248px;
+        }
+        .page5 .student-container {
+            width: 265px;
+        }
+    }
+    @media (max-width:500px) 
+    {
+        .inside h1 {
+            font-size: 30px;
+            width: 301px;
+           line-height: 40px;
+        } 
+        .inside p {
+            font-size: 11px;
+        width: 325px;
+        }
+        .inside a{
+            margin-top: 10px;
+            font-size: 14px;
+        } 
+        .courses{
+            width: 280px;
+            height: 330px;
+        }
+        .page3 .courese-cards {
+            width: 290px;
+        }
+        .page2 h1, .page3 h1, .page4 h1, .page5 h1 {
+            font-size: 28px;
+           width: 300px;
+        }
+        .page6 h1{
+            font-size: 28px;
+    
+        }
+        .inside-image img {
+            width: 250px;
+        }
+        .navbar {
+            height: 38px;
+        }
+        .logo img {
+            width: 90px;
+        }  
+        .menu img {
+            width: 30px;
+        }
+        .courses {
+            margin: 10px 5px;
+        }
+    }
+    @media (min-width:500px) 
+    {
+        .courses{
+            width: 350px;
+            height: 280px;
+        }
+        .logo img {
+            width: 130px;
+        }    
+        .menu img {
+            width: 40px;
+        }
+        .courses {
+            margin: 15px 10px;
+        }
+        footer .f-container .link {
+            padding: 25px 0px 25px 50px;
+        }
+    }
